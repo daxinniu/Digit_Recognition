@@ -1,1 +1,1 @@
-# Digit_Recognition
+# MNIST_Neural_Network
