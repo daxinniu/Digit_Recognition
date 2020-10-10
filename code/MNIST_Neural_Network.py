@@ -154,8 +154,6 @@ def train(model, train_inputs, train_labels):
         model.gradient_descent(gradW, gradB)
         # Add loss of this batch to the array
         np.append(loss, model.loss(probabilities, labels))
-    # Visualize loss per batch
-    visualize_loss(loss)
 
 
 
@@ -177,23 +175,6 @@ def test(model, test_inputs, test_labels):
     # Calculate the accuracy using the accuracy function.
     accuracy = model.accuracy(probabilities, test_labels)
     return accuracy
-
-
-
-def visualize_loss(losses):
-    """
-    Uses Matplotlib to visualize loss per batch.
-
-    Args:
-        losses ([array]): an array of loss value from each batch of train.
-    """
-    x = np.arange(1, len(losses)+1)
-    plt.xlabel('i\'th Batch')
-    plt.ylabel('Loss Value')
-    plt.title('Loss per Batch')
-    plt.plot(x, losses)
-    plt.show()
-
 
 
 def visualize_results(image_inputs, probabilities, image_labels):
